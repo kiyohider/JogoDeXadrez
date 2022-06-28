@@ -8,13 +8,16 @@ namespace xadrez
         public Tabuleiro tabuleiro { get; private set; }    
         private int turno;
         private Cor joadorAtual;
+        public bool terminada { get; private set; } 
 
         public PartidaDeXadrez()
         {
             tabuleiro = new Tabuleiro(8, 8);
             turno = 1;
             joadorAtual = Cor.Branca;
+            terminada = false;   
             colocarPecas();
+
         }
 
         public void executarMovimento(Posicao origem, Posicao destino)
@@ -45,7 +48,7 @@ namespace xadrez
             tabuleiro.colocarPeca(new Bispo(Cor.Branca, tabuleiro), new PosicaoXadrez('f', 8).toPosicao());
             tabuleiro.colocarPeca(new Cavalo(Cor.Branca, tabuleiro), new PosicaoXadrez('g', 8).toPosicao());
             tabuleiro.colocarPeca(new Torre(Cor.Branca, tabuleiro), new PosicaoXadrez('h', 8).toPosicao());
-
+            Console.WriteLine();
             
         }
     }
