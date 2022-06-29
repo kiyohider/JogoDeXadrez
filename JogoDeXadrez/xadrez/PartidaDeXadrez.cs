@@ -32,21 +32,21 @@ namespace xadrez
         {
            
             tabuleiro.colocarPeca(new Torre(Cor.Preta, tabuleiro), new PosicaoXadrez('a', 1).toPosicao());
-            tabuleiro.colocarPeca(new Cavalo(Cor.Preta, tabuleiro), new PosicaoXadrez('b', 1).toPosicao());
-            tabuleiro.colocarPeca(new Bispo(Cor.Preta, tabuleiro), new PosicaoXadrez('c', 1).toPosicao());
+            //tabuleiro.colocarPeca(new Cavalo(Cor.Preta, tabuleiro), new PosicaoXadrez('b', 1).toPosicao());
+            //tabuleiro.colocarPeca(new Bispo(Cor.Preta, tabuleiro), new PosicaoXadrez('c', 1).toPosicao());
             tabuleiro.colocarPeca(new Rei(Cor.Preta, tabuleiro), new PosicaoXadrez('d', 1).toPosicao());
-            tabuleiro.colocarPeca(new Dama(Cor.Preta, tabuleiro), new PosicaoXadrez('e', 1).toPosicao());
-            tabuleiro.colocarPeca(new Bispo(Cor.Preta, tabuleiro), new PosicaoXadrez('f', 1).toPosicao());
-            tabuleiro.colocarPeca(new Cavalo(Cor.Preta, tabuleiro), new PosicaoXadrez('g', 1).toPosicao());
+            //tabuleiro.colocarPeca(new Dama(Cor.Preta, tabuleiro), new PosicaoXadrez('e', 1).toPosicao());
+            //tabuleiro.colocarPeca(new Bispo(Cor.Preta, tabuleiro), new PosicaoXadrez('f', 1).toPosicao());
+            //tabuleiro.colocarPeca(new Cavalo(Cor.Preta, tabuleiro), new PosicaoXadrez('g', 1).toPosicao());
             tabuleiro.colocarPeca(new Torre(Cor.Preta, tabuleiro), new PosicaoXadrez('h', 1).toPosicao());
 
             tabuleiro.colocarPeca(new Torre(Cor.Branca, tabuleiro), new PosicaoXadrez('a', 8).toPosicao());
-            tabuleiro.colocarPeca(new Cavalo(Cor.Branca, tabuleiro), new PosicaoXadrez('b', 8).toPosicao());
-            tabuleiro.colocarPeca(new Bispo(Cor.Branca, tabuleiro), new PosicaoXadrez('c', 8).toPosicao());
+            //tabuleiro.colocarPeca(new Cavalo(Cor.Branca, tabuleiro), new PosicaoXadrez('b', 8).toPosicao());
+            //tabuleiro.colocarPeca(new Bispo(Cor.Branca, tabuleiro), new PosicaoXadrez('c', 8).toPosicao());
             tabuleiro.colocarPeca(new Rei(Cor.Branca, tabuleiro), new PosicaoXadrez('d', 8).toPosicao());
-            tabuleiro.colocarPeca(new Dama(Cor.Branca, tabuleiro), new PosicaoXadrez('e', 8).toPosicao());
-            tabuleiro.colocarPeca(new Bispo(Cor.Branca, tabuleiro), new PosicaoXadrez('f', 8).toPosicao());
-            tabuleiro.colocarPeca(new Cavalo(Cor.Branca, tabuleiro), new PosicaoXadrez('g', 8).toPosicao());
+            //tabuleiro.colocarPeca(new Dama(Cor.Branca, tabuleiro), new PosicaoXadrez('e', 8).toPosicao());
+            //tabuleiro.colocarPeca(new Bispo(Cor.Branca, tabuleiro), new PosicaoXadrez('f', 8).toPosicao());
+            //tabuleiro.colocarPeca(new Cavalo(Cor.Branca, tabuleiro), new PosicaoXadrez('g', 8).toPosicao());
             tabuleiro.colocarPeca(new Torre(Cor.Branca, tabuleiro), new PosicaoXadrez('h', 8).toPosicao());
             Console.WriteLine();
             

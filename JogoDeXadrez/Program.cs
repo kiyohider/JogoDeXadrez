@@ -24,7 +24,14 @@ namespace JogoDeXadrez
                     Console.Write("escolha uma peça: ");
                     Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
 
-                    Console.Write("larga peça: ");
+                    bool[,] movimentosPossiveis = partidaDeXadrez.tabuleiro.peca(origem).movimentosPossiveis();
+
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partidaDeXadrez.tabuleiro,movimentosPossiveis);
+
+
+                    Console.WriteLine();
+                    Console.Write("movimento da peça: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
                     partidaDeXadrez.executarMovimento(origem, destino); 

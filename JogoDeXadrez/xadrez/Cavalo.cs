@@ -2,9 +2,9 @@
 
 namespace xadrez
 {
-     class Cavalo : Peca
+     class Cavalo// : Peca
     {
-        public Cavalo(Cor cor, Tabuleiro tabuleiro) : base(cor, tabuleiro)
+        public Cavalo(Cor cor, Tabuleiro tabuleiro)// : base(cor, tabuleiro)
         {
 
         }
