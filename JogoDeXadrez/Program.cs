@@ -8,8 +8,6 @@ namespace JogoDeXadrez
     {
         static void Main(string[] args)
         {
-
-
             try
             {
                 PartidaDeXadrez partidaDeXadrez = new PartidaDeXadrez();
@@ -18,8 +16,9 @@ namespace JogoDeXadrez
                 {
                     Console.Clear();
                     Tela.imprimirTabuleiro(partidaDeXadrez.tabuleiro);
-
                     Console.WriteLine();
+                    Console.WriteLine("Turno: " + partidaDeXadrez.turno);
+                    Console.WriteLine("Aguardando jogada: " + partidaDeXadrez.jogadorAtual);
 
                     Console.Write("escolha uma peça: ");
                     Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
@@ -34,7 +33,7 @@ namespace JogoDeXadrez
                     Console.Write("movimento da peça: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
-                    partidaDeXadrez.executarMovimento(origem, destino); 
+                    partidaDeXadrez.realizaJogada(origem, destino); 
                 }
             }
             catch (TabuleiroException e)
