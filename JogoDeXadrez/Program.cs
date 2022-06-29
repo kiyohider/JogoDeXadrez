@@ -8,11 +8,12 @@ namespace JogoDeXadrez
     {
         static void Main(string[] args)
         {
-            try
-            {
+            
                 PartidaDeXadrez partidaDeXadrez = new PartidaDeXadrez();
 
                 while (!partidaDeXadrez.terminada)
+                {
+                try
                 {
                     Console.Clear();
                     Tela.imprimirTabuleiro(partidaDeXadrez.tabuleiro);
@@ -22,7 +23,7 @@ namespace JogoDeXadrez
 
                     Console.Write("escolha uma peça: ");
                     Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
-
+                    partidaDeXadrez.validarPosicaoDeOrigem(origem);
                     bool[,] movimentosPossiveis = partidaDeXadrez.tabuleiro.peca(origem).movimentosPossiveis();
 
                     Console.Clear();
@@ -33,17 +34,19 @@ namespace JogoDeXadrez
                     Console.Write("movimento da peça: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
-                    partidaDeXadrez.realizaJogada(origem, destino); 
+                    partidaDeXadrez.realizaJogada(origem, destino);
+                }
+                catch (TabuleiroException e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.ReadLine();
                 }
             }
-            catch (TabuleiroException e)
-            {
-                Console.WriteLine(e.Message);
-            }
 
 
 
-            Console.ReadLine();
+
+          
         }
 
 

@@ -36,6 +36,22 @@ namespace xadrez
             mudaJogador();
 
         }
+
+        public void validarPosicaoDeOrigem(Posicao posicao)
+        {
+            if(tabuleiro.peca(posicao) == null)
+            {
+                throw new TabuleiroException("Não existe peça na posição escolhida!");
+            }
+            if(jogadorAtual != tabuleiro.peca(posicao).cor)
+            {
+                throw new TabuleiroException("A peça escolhida não é sua!");
+            }
+            if (!tabuleiro.peca(posicao).existeMovimentosPossiveis())
+            {
+                throw new TabuleiroException("Não a movimentos possiveis para esta peça!");
+            }
+        }
         private void mudaJogador()
         {
             if(jogadorAtual == Cor.Branca)
@@ -54,7 +70,7 @@ namespace xadrez
         {
            
             tabuleiro.colocarPeca(new Torre(Cor.Preta, tabuleiro), new PosicaoXadrez('a', 1).toPosicao());
-            //tabuleiro.colocarPeca(new Cavalo(Cor.Preta, tabuleiro), new PosicaoXadrez('b', 1).toPosicao());
+            tabuleiro.colocarPeca(new Torre(Cor.Preta, tabuleiro), new PosicaoXadrez('b', 1).toPosicao());
             //tabuleiro.colocarPeca(new Bispo(Cor.Preta, tabuleiro), new PosicaoXadrez('c', 1).toPosicao());
             tabuleiro.colocarPeca(new Rei(Cor.Preta, tabuleiro), new PosicaoXadrez('d', 1).toPosicao());
             //tabuleiro.colocarPeca(new Dama(Cor.Preta, tabuleiro), new PosicaoXadrez('e', 1).toPosicao());
