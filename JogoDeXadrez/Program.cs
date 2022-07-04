@@ -33,6 +33,7 @@ namespace JogoDeXadrez
                     Console.WriteLine();
                     Console.Write("movimento da peça: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
+                    partidaDeXadrez.validarPosicaoDeDestino(origem, destino);
 
                     partidaDeXadrez.realizaJogada(origem, destino);
                 }
