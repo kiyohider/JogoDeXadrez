@@ -16,7 +16,7 @@ namespace JogoDeXadrez
             Console.WriteLine("Aguardando jogada: " + partidaDeXadrez.jogadorAtual);
         }
 
-        public static void imprimirPecasCapturadas (PartidaDeXadrez partidaDeXadrez)
+        public static void imprimirPecasCapturadas(PartidaDeXadrez partidaDeXadrez)
         {
             Console.WriteLine("Peças capturadas: ");
             Console.Write("Brancas: ");
@@ -41,12 +41,12 @@ namespace JogoDeXadrez
         }
         public static void imprimirTabuleiro(Tabuleiro tabuleiro)
         {
-            for (int i=0; i<tabuleiro.linhas; i++)
+            for (int i = 0; i < tabuleiro.linhas; i++)
             {
                 Console.Write(8 - i + " ");
                 for (int j = 0; j < tabuleiro.colunas; j++)
-                {      
-                        imprimirPeca(tabuleiro.peca(i, j));                                       
+                {
+                    imprimirPeca(tabuleiro.peca(i, j));
                 }
                 Console.WriteLine();
             }
@@ -57,7 +57,7 @@ namespace JogoDeXadrez
             ConsoleColor fundoOriginal = Console.BackgroundColor;
             ConsoleColor fundoMarcado = ConsoleColor.Green;
 
-            for (int i=0; i<tabuleiro.linhas; i++)
+            for (int i = 0; i < tabuleiro.linhas; i++)
             {
                 Console.Write(8 - i + " ");
                 for (int j = 0; j < tabuleiro.colunas; j++)
@@ -70,13 +70,13 @@ namespace JogoDeXadrez
                     {
                         Console.BackgroundColor = fundoOriginal;
                     }
-                        imprimirPeca(tabuleiro.peca(i, j));
+                    imprimirPeca(tabuleiro.peca(i, j));
                     Console.BackgroundColor = fundoOriginal;
                 }
                 Console.WriteLine();
             }
             Console.WriteLine("  a b c d e f g h");
-           
+
         }
 
         public static PosicaoXadrez lerPosicaoXadrez()

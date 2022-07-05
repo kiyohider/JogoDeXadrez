@@ -2,7 +2,7 @@
 
 namespace xadrez
 {
-     class Peao// : Peca
+    class Peao// : Peca
     {
         public Peao(Cor cor, Tabuleiro tabuleiro) //: base(cor, tabuleiro)
         {

@@ -26,10 +26,10 @@ namespace xadrez
             Posicao pos = new Posicao(0, 0);
             //cima
             pos.definirValores(posicao.linha - 1, posicao.coluna);
-            while (tabuleiro.posicaoValida(pos) && podeMover (pos))
+            while (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
-                if(tabuleiro.peca(pos) != null && tabuleiro.peca(pos).cor != cor)
+                if (tabuleiro.peca(pos) != null && tabuleiro.peca(pos).cor != cor)
                 {
                     break;
                 }

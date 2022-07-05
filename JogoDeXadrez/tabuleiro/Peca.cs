@@ -20,10 +20,15 @@
             numMovimento++;
         }
 
+        public void decrementarMovimento()
+        {
+            numMovimento--;
+        }
+
         public bool existeMovimentosPossiveis()
         {
             bool[,] mat = movimentosPossiveis();
-            for(int i = 0; i < tabuleiro.linhas; i++)
+            for (int i = 0; i < tabuleiro.linhas; i++)
             {
                 for (int j = 0; j < tabuleiro.colunas; j++)
                 {
@@ -31,7 +36,7 @@
                     {
                         return true;
                     }
-                    
+
                 }
             }
             return false;

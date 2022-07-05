@@ -8,11 +8,11 @@ namespace JogoDeXadrez
     {
         static void Main(string[] args)
         {
-            
-                PartidaDeXadrez partidaDeXadrez = new PartidaDeXadrez();
 
-                while (!partidaDeXadrez.terminada)
-                {
+            PartidaDeXadrez partidaDeXadrez = new PartidaDeXadrez();
+
+            while (!partidaDeXadrez.terminada)
+            {
                 try
                 {
                     Console.Clear();
@@ -25,7 +25,7 @@ namespace JogoDeXadrez
                     bool[,] movimentosPossiveis = partidaDeXadrez.tabuleiro.peca(origem).movimentosPossiveis();
 
                     Console.Clear();
-                    Tela.imprimirTabuleiro(partidaDeXadrez.tabuleiro,movimentosPossiveis);
+                    Tela.imprimirTabuleiro(partidaDeXadrez.tabuleiro, movimentosPossiveis);
 
 
                     Console.WriteLine();
@@ -45,7 +45,7 @@ namespace JogoDeXadrez
 
 
 
-          
+
         }
 
 

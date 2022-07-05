@@ -3,7 +3,7 @@
 
 namespace xadrez
 {
-     class Rei  : Peca
+    class Rei : Peca
     {
         public Rei(Cor cor, Tabuleiro tabuleiro) : base(cor, tabuleiro)
         {
@@ -29,7 +29,7 @@ namespace xadrez
             pos.definirValores(posicao.linha - 1, posicao.coluna);
             if (tabuleiro.posicaoValida(pos) && podeMover(pos))
             {
-                mat[pos.linha, pos.coluna] = true;  
+                mat[pos.linha, pos.coluna] = true;
             }
             //ne
             pos.definirValores(posicao.linha - 1, posicao.coluna + 1);
