@@ -9,9 +9,9 @@ namespace xadrez
         public int turno { get; private set; }
         public Cor jogadorAtual { get; private set; }
         public bool terminada { get; private set; }
-        public bool xeque { get; private set; }
         private HashSet<Peca> pecas;
         private HashSet<Peca> capturadas;
+         public bool xeque { get; private set; }
 
         public PartidaDeXadrez()
         {
@@ -159,7 +159,7 @@ namespace xadrez
             foreach (Peca x in pecasEmJogo(adversaria(cor)))
             {
                 bool[,] mat = x.movimentosPossiveis();
-                if (mat[R.posicao.linha, R.posicao.coluna])
+                if (mat[R.posicao.coluna, R.posicao.linha])
                 {
                     return true;
                 }
@@ -170,7 +170,7 @@ namespace xadrez
         public HashSet<Peca> pecasEmJogo(Cor cor)
         {
             HashSet<Peca> aux = new HashSet<Peca>();
-            foreach (Peca x in capturadas)
+            foreach (Peca x in pecas)
             {
                 if (x.cor == cor)
                 {
