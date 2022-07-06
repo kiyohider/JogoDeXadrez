@@ -12,12 +12,22 @@ namespace JogoDeXadrez
             Console.WriteLine();
             imprimirPecasCapturadas(partidaDeXadrez);
             Console.WriteLine();
-            Console.WriteLine("Turno: " + partidaDeXadrez.turno);
-            Console.WriteLine("Aguardando jogada: " + partidaDeXadrez.jogadorAtual);
-            if (partidaDeXadrez.xeque)
+
+            if (!partidaDeXadrez.terminada)
             {
-                Console.WriteLine("XEQUE !");
+                Console.WriteLine("Turno: " + partidaDeXadrez.turno);
+                Console.WriteLine("Aguardando jogada: " + partidaDeXadrez.jogadorAtual);
+                if (partidaDeXadrez.xeque)
+                {
+                    Console.WriteLine("XEQUE !");
+                }
             }
+            else
+            {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine("Vencedor: " + partidaDeXadrez.jogadorAtual);
+            }
+            
            
         }
 

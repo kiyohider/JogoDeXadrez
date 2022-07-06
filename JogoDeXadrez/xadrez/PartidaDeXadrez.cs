@@ -71,8 +71,17 @@ namespace xadrez
                 xeque = false;
             }
 
-            turno++;
-            mudaJogador();
+            if (xequeMate(adversaria(jogadorAtual)))
+            {
+                terminada = true;
+            }
+            else
+            {
+                turno++;
+                mudaJogador();
+            }
+
+         
 
         }
 
@@ -159,12 +168,43 @@ namespace xadrez
             foreach (Peca x in pecasEmJogo(adversaria(cor)))
             {
                 bool[,] mat = x.movimentosPossiveis();
-                if (mat[R.posicao.coluna, R.posicao.linha])
+                if (mat[R.posicao.linha, R.posicao.coluna])
                 {
                     return true;
                 }
             }
             return false;
+        }
+
+        public bool xequeMate(Cor cor)
+        {
+            if (!emXeque(cor))
+            {
+                return false;
+            }
+            foreach (Peca x in pecasEmJogo(cor))
+            {
+                bool[,] mat = x.movimentosPossiveis();
+                for(int i = 0; i<tabuleiro.linhas; i++)
+                {
+                    for(int j = 0; j<tabuleiro.colunas; j++)
+                    {
+                        if (mat[i, j])
+                        {
+                            Posicao origem = x.posicao;
+                            Posicao destino = new Posicao(i, j);
+                            Peca pecaCapturada = executarMovimento(origem, destino);
+                            bool xequeMate = emXeque(cor);
+                            movimentoInvalido(origem, destino, pecaCapturada);
+                            if (!xeque)
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
         }
 
         public HashSet<Peca> pecasEmJogo(Cor cor)
@@ -188,10 +228,12 @@ namespace xadrez
         }
         private void colocarPecas()
         {
-            colocarNovaPeca('a', 1, new Torre(Cor.Branca, tabuleiro));
+            
+            colocarNovaPeca('h', 7, new Torre(Cor.Branca, tabuleiro));
+            colocarNovaPeca('c', 1, new Torre(Cor.Branca, tabuleiro));
             colocarNovaPeca('f', 1, new Rei(Cor.Branca, tabuleiro));
-            colocarNovaPeca('a', 8, new Torre(Cor.Preta, tabuleiro));
-            colocarNovaPeca('f', 8, new Rei(Cor.Preta, tabuleiro));
+            colocarNovaPeca('b', 8, new Torre(Cor.Preta, tabuleiro));
+            colocarNovaPeca('a', 8, new Rei(Cor.Preta, tabuleiro));
             Console.WriteLine();
 
         }
