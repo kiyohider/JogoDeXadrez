@@ -22,6 +22,7 @@ namespace JogoDeXadrez
                     Console.Write("escolha uma peça: ");
                     Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
                     partidaDeXadrez.validarPosicaoDeOrigem(origem);
+
                     bool[,] movimentosPossiveis = partidaDeXadrez.tabuleiro.peca(origem).movimentosPossiveis();
 
                     Console.Clear();
